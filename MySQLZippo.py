@@ -27,7 +27,7 @@ except:
 db.close()
 
 
-
+# 统计出现频率，并倒序排列
 matchNum = dict(Counter(results))
 matchResults = sorted(matchNum.items(), key=operator.itemgetter(1), reverse=True)
 print(matchResults[0:100])
