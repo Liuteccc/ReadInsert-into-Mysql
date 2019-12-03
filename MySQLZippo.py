@@ -10,7 +10,7 @@ db = MySQLdb.connect("localhost", "root", "mysql123", "Monster", charset='utf8')
 # 使用cursor()方法获取操作游标
 cursor = db.cursor()
 
-# 选中所有数据
+# 选中所有指定数据
 sqlSelect = "Select recordID FROM November WHERE monsterID IN (3,4,5,6)"
 
 try:
@@ -27,7 +27,7 @@ except:
 db.close()
 
 
-# 统计出现频率，并倒序排列
+# 统计出现频率，并根据频率倒序排列
 matchNum = dict(Counter(results))
 matchResults = sorted(matchNum.items(), key=operator.itemgetter(1), reverse=True)
 print(matchResults[0:100])
